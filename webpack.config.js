@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 const publicPath = isProduction ? '/FUTOROPOLIS/' : '/';
@@ -33,6 +34,11 @@ module.exports = {
       template: './public/index.html',
       favicon: './public/logoiot.jpg',
       publicPath: publicPath
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public/.nojekyll', to: '.nojekyll', noErrorOnMissing: true }
+      ]
     })
   ],
   devServer: {
