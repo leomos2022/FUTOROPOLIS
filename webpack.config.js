@@ -7,7 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash].js',
     clean: true,
-    publicPath: process.env.NODE_ENV === 'production' ? '/futoropolis/' : '/'
+    publicPath: process.env.NODE_ENV === 'production' ? '/FUTOROPOLIS/' : '/'
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx']

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Ciudad Inteligente 3D Educativa con Three.js e IoT",
   "main": "index.js",
-  "homepage": "https://leomos2022.github.io/futoropolis",
+  "homepage": "https://leomos2022.github.io/FUTOROPOLIS",
   "scripts": {
     "dev": "webpack serve --mode development --hot",
     "build": "webpack --mode production",
