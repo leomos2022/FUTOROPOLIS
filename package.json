@@ -6,7 +6,7 @@
   "homepage": "https://leomos2022.github.io/FUTOROPOLIS",
   "scripts": {
     "dev": "webpack serve --mode development --hot",
-    "build": "webpack --mode production",
+    "build": "NODE_ENV=production webpack --mode production",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "start": "node backend/server.js",
