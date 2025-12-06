@@ -1,13 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const isProduction = process.env.NODE_ENV === 'production';
+const publicPath = isProduction ? '/FUTOROPOLIS/' : '/';
+
 module.exports = {
   entry: './src/main.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash].js',
     clean: true,
-    publicPath: process.env.NODE_ENV === 'production' ? '/FUTOROPOLIS/' : '/'
+    publicPath: publicPath
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx']
@@ -28,7 +31,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/logoiot.jpg'
+      favicon: './public/logoiot.jpg',
+      publicPath: publicPath
     })
   ],
   devServer: {
@@ -36,5 +40,5 @@ module.exports = {
     hot: true,
     open: true
   },
-  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development'
+  mode: isProduction ? 'production' : 'development'
 };
