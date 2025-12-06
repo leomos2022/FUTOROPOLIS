@@ -32,8 +32,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
-      favicon: './public/logoiot.jpg',
-      publicPath: publicPath
+      favicon: './public/logoiot.jpg'
     }),
     new CopyWebpackPlugin({
       patterns: [
